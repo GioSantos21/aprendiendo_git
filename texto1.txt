@@ -1,1 +1,3 @@
 este es el primer parrafo de este archivo txt
+
+segunda linea de texto del archivo 1
