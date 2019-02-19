@@ -1,0 +1,197 @@
+2- mkdir geovani_santos
+3- cd geovani_santos 
+LUEGO
+mkdir aprendiendo_git
+4- cd aprendiendo_git
+LUEGO
+git init gio
+5- cd gio
+LUEGO 
+git config user.name geovani_santos 
+LUEGO 
+git config user.email geovanny12016@gmail.com
+6- git status
+INFORMACIÓN DEVUELTA:
+	ONn branch master
+	No commits yet
+	nothing to commit (create/copy files and use "git add" to track)
+7-touch texto1.txt
+LUEGO
+nano texto1.txt 
+COMENTARIO = agregamos información al archivo llamado texto1.txt
+8- git add texto1.txt
+9- git commit -m primer_commit
+10- git log
+INFORMACIÓN DEVUELTA:
+
+	commit b2c2e63dadd26f1b28f02dbaee1d573381c7b793 (HEAD -> master)
+	Author: geovani_martinez <geovanny12016@gmail.com>
+	Date:   Tue Feb 19 06:58:34 2019 -0600
+	
+	primer_commit
+11- mkdir directorio1
+LUEGO
+cd directorio
+LUEGO
+touch texto2.txt
+LUEGO
+touch texto3.txt
+nano texto2.txt
+LUEGO
+nano texto3.txt
+COMENTARIO = Creamos dos archivos .txt y les agregamos información a cada uno de 
+ellos.
+12- cd ..
+LUEGO
+nano texto1.txt
+COMENTARIO = Añadimos nueva información en el archivo1
+13- git diff texto1.txt
+INFORMACIÓN DEVUELTA:
+	warning: LF will be replaced by CRLF in texto1.txt.
+	The file will have its original line endings in your working directory
+	diff --git a/texto1.txt b/texto1.txt
+	index 0502699..26ea48d 100644
+	--- a/texto1.txt
+	+++ b/texto1.txt
+	@@ -1 +1,3 @@
+	este es el primer parrafo de este archivo txt
+	+
+	+segunda linea de texto del archivo 1
+14- git add *.txt
+LUEGO
+cd directorio1
+LUEGO
+git add *.txt
+15- git diff
+COMENTARIO = No me devolvio ninguna información, con ninguno de los 3 archivos
+16- git reset texto2.txt
+17- git commit -m segundo_commit
+INFORMACIÓN DEVUELTA:
+	[master 7f3c0ce] segundo_commit
+	2 files changed, 3 insertions(+)
+	create mode 100644 directorio1/texto3.txt
+18- git status
+INFORMACIÓN DEVUELTA:
+	On branch master
+	Untracked files:
+	(use "git add <file>..." to include in what will be committed)
+
+        texto2.txt
+
+	nothing added to commit but untracked files present (use "git add" to track)
+git log
+INFORMACIÓN DEVUELTA:
+	commit 7f3c0cee4c88d5ac6109fa1a18cbe7489e7048c9 (HEAD -> master)
+	Author: geovani_martinez <geovanny12016@gmail.com>
+	Date:   Tue Feb 19 07:08:52 2019 -0600
+
+	segundo_commit
+
+	commit b2c2e63dadd26f1b28f02dbaee1d573381c7b793
+	Author: geovani_martinez <geovanny12016@gmail.com>
+	Date:   Tue Feb 19 06:58:34 2019 -0600
+
+	primer_commit
+19- nano texto2.txt
+COMENTARIO = Añadimos más información al archivo 2
+20- cd ..
+LUEGO
+nano texto1.txt
+COMENTARIO = Agregamos nuevamente información en el archivo 1
+21- git diff texto1.txt
+INFORMACIÓN DEVUELTA:
+	warning: LF will be replaced by CRLF in texto1.txt.
+	The file will have its original line endings in your working directory
+	diff --git a/texto1.txt b/texto1.txt
+	index 26ea48d..a66bb78 100644
+	--- a/texto1.txt
+	+++ b/texto1.txt
+	@@ -1,3 +1,5 @@
+	 este es el primer parrafo de este archivo txt
+
+	 segunda linea de texto del archivo 1
+	+
+	+los ordenadores son inutiles, solo pueden darte respuestas
+
+COMENTARIO = El texto1.txt si devolvio una diferencia, mientras que el 
+texto2.txt que fue sacado de la areá de preparación no mostro nada.
+22- git add texto1.txt
+INFORMACIÓN DEVUELTA:
+	warning: LF will be replaced by CRLF in texto1.txt.
+	The file will have its original line endings in your working directory
+23- git commit -m tercer_commit
+INFORMACIÓN DEVUELTA:
+	[master c8a8091] tercer_commit
+	1 file changed, 2 insertions(+)
+24- git reset texto1.txt
+LUEGO
+git log --oneline
+LUEGO
+git checkout be44097
+COMENTARIO = copiamos el codigo del primer commit y lo colocamos despues del comando 
+checkout
+INFORMACIÓN DEVUELTA:
+	Note: checking out 'b2c2e63'.
+
+	You are in 'detached HEAD' state. You can look around, make experimental
+	changes and commit them, and you can discard any commits you make in this
+	state without impacting any branches by performing another checkout.
+
+	If you want to create a new branch to retain commits you create, you may
+	do so (now or later) by using -b with the checkout command again. Example:
+
+	git checkout -b <new-branch-name>
+
+	HEAD is now at b2c2e63 primer_commi
+25- git status
+INFORMACIÓN DEVUELTA:
+	HEAD detached at b2c2e63
+	Untracked files:
+	(use "git add <file>..." to include in what will be committed)
+
+        directorio1/
+
+	nothing added to commit but untracked files present (use "git add" to track)
+LUEGO
+git log
+INFORMACIÓN DEVUELTA:
+	commit b2c2e63dadd26f1b28f02dbaee1d573381c7b793 (HEAD)
+	Author: geovani_martinez <geovanny12016@gmail.com>
+	Date:   Tue Feb 19 06:58:34 2019 -0600
+
+	primer_commit
+COMENTARIO = Ahora solo muestra el primer commit de los 3 que tenia.
+LUEGO
+git branch primer_rama
+26-git checkout master
+INFORMACIÓN DEVUELTA:
+	Previous HEAD position was b2c2e63 primer_commit
+	Switched to branch 'master
+27- git branch rama2
+28- git checkout rama2
+29- mkdir directorio2
+LUEGO
+cd directorio2
+LUEGO
+touch texto4.txt
+lUEGO
+nano texto4.txt
+30- git add texto4.txt
+INFORMACIÓN DEVUELTA:
+	warning: LF will be replaced by CRLF in directorio2/texto4.txt.
+	The file will have its original line endings in your working directory
+LUEGO
+git commit -m primer_commit_de_rama2
+INFORMACIÓN DEVUELTA:
+	[rama2 3754dac] primer_commit_de_rama2
+	1 file changed, 1 insertion(+)
+	create mode 100644 directorio2/texto4.txt
+31-git log --oneline
+32- git checkout master
+LUEGO 
+COMENTARIO GIO= No se puede ejecutar el comando git status ni git log en 
+el directorio2 ya que este pertenece a la rama2 estando en la rama master 
+Solo podemos ejecutar dichos comandos si volvemos a la carpeta anterior
+33- git merge rama2
+COMENTARIO GIO= Se incorporo el directorio2 y el texto4.txt a la rama master
+34- chevere ;) seguire practicando.
