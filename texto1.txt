@@ -1,3 +1,5 @@
 este es el primer parrafo de este archivo txt
 
 segunda linea de texto del archivo 1
+
+los ordenadores son inutiles, solo pueden darte respuestas
